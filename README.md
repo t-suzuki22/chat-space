@@ -7,7 +7,7 @@
 |name|string|null: false|
 ### Association
 - has_many :groups, through: :groups_users
-- has_many :comments
+- has_many :message
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -15,12 +15,13 @@
 |title|text|null: false|
 ### Association
 - has_many :user, through: :groups_users
-- has_many :comments
+- has_many :message
 
-## commentsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|body|text|null: false|
+|image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
