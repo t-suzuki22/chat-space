@@ -1,14 +1,14 @@
 .side-bar
   .header
-    .header__name
-      masa
-    .header__lists
-      .list
+    %h3.header__name
+      = current_user.name
+    %ul.header__lists
+      %li.list
         =link_to '#' do
           = icon('fa', 'edit',class: 'icon')
-      .list
-        =link_to '#' do
-          = icon('fa', 'cog',class: 'icon')
+      %li.list
+        =link_to edit_user_path(current_user) do
+          = icon('fas', 'cog',class: 'icon')
 
   .groups
     .group
